@@ -271,4 +271,8 @@ const books = [
     }
 ]
 
+export function addBook(newBook){
+    books.push(newBook);
+}
+
 export default books;

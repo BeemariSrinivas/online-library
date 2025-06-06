@@ -7,12 +7,11 @@ import { useParams } from "react-router-dom";
 function BrowseBooks(){
     const [name,setName] = useState("");
     const [bookName, setBookName] = useState("");
+    const [newbookList , setBookList] = useState([]);
+    const [filter, setFilter] = useState(false);
     const params = useParams();
+    const categoryBooks = books.filter((book)=>book.id%5==1);
     let bookList;
-    console.log(params);
-    if(params.category){
-        console.log(params.category);
-    }
 
     function handelChange(event){
         const {value} = event.target;
@@ -23,7 +22,7 @@ function BrowseBooks(){
         setBookName(name);
     }
 
-    if(params.category)
+    if(!filter && params.category)
     {
         const newBook = books.filter((book)=>book.category===params.category);
         bookList = newBook;
@@ -39,6 +38,28 @@ function BrowseBooks(){
     return(
         <div id="browseBooks">
             <h1>BrosweBooks</h1>
+            <h2>Filer Books</h2>
+            <div id="categoryBooks">
+                {
+                categoryBooks.map((book)=>{
+                    return(
+                        <Link to={`/category/${book.category}`} key={book.id}>
+                            <div >
+                            <h3>{book.category}</h3>
+                        </div>
+                        </Link>
+                    )
+                })
+            }
+            </div>
+            <Link to="/BrowseBooks">
+                <button onClick={()=>{
+                setBookName("");
+                setName("");
+            }}>Clear Filter
+            </button></Link>
+            <h2>--------------------Or-----------------------</h2>
+            <h2>Search Book By Book Title</h2>
             <div id="search">
                 <label>Enter Book Name: </label>
                 <input id="bookName" onChange={handelChange} value={name} type="text"/>
