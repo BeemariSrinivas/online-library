@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import "../index.css"
 import { useState } from "react";
-import books from "../../utils/expanded_dummy_books";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 function BrowseBooks(){
+    const books = useSelector((store)=>store.bookList.books);
     const [name,setName] = useState("");
     const [bookName, setBookName] = useState("");
     const [newbookList , setBookList] = useState([]);
@@ -37,8 +39,8 @@ function BrowseBooks(){
 
     return(
         <div id="browseBooks">
-            <h1>BrosweBooks</h1>
-            <h2>Filer Books</h2>
+            <h1>Browse Books</h1>
+            <h2>Filer Books By Category</h2>
             <div id="categoryBooks">
                 {
                 categoryBooks.map((book)=>{

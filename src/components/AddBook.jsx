@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "../index.css"
-import books from "../../utils/expanded_dummy_books";
-import { addBook } from "../../utils/expanded_dummy_books";
+import { useDispatch } from "react-redux";
+import { addBook } from "../../utils/bookListSlice";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function AddBook(){
     const [title, setTitle] = useState("");
@@ -10,9 +12,9 @@ function AddBook(){
     const [category, setCategory] = useState("");
     const [summary, setSummary] = useState("");
     const [rating, setRating] = useState(null);
-    const [newbook, setNewBook] = useState({});
-
-
+    const dispatch = useDispatch();
+    const books = useSelector((store)=>store.bookList.books);
+    const navigate = useNavigate();
 
     function handleTitle(event){
         const {value} = event.target;
@@ -82,9 +84,8 @@ function AddBook(){
         "rating": rating,
         "summary": summary,
             }
-            addBook(newBook);
-            setNewBook(newBook);
-            console.log(newBook);
+            dispatch(addBook(newBook));
+            navigate("/BrowseBooks");
         }
     }
 

@@ -1,4 +1,9 @@
-const books = [
+import { createSlice } from "@reduxjs/toolkit";
+
+const bookListSlice = createSlice({
+    name : "allBooks",
+    initialState : {
+        books : [
     {
         "id": 1,
         "title": "The Enchanted Forest",
@@ -270,9 +275,14 @@ const books = [
         "summary": "Dive into the vibrant, futuristic landscape of 'Neon Destiny' by Sora Natsuki, where the lines between fate and free will blur. In a sprawling cyber city, characters find their lives intertwined by unseen forces, leading to a thrilling clash for the future of their digital world."
     }
 ]
+    },
+    reducers :{
+        addBook : (state,action)=>{
+            state.books.push(action.payload);
+        }
+    }
+});
 
-export function addBook(newBook){
-    books.push(newBook);
-}
+export const { addBook } = bookListSlice.actions;
 
-export default books;
+export default bookListSlice.reducer;

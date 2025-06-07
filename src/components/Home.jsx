@@ -1,9 +1,10 @@
 import "../index.css"
-import books from "../../utils/expanded_dummy_books";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 function Home(){
+    const books = useSelector((store)=>store.bookList.books);
     const categoryBooks = books.filter(book=>book.id%5===1);
     const popularBooks = books.filter(book=>(book.rating>4.5));
     return(
