@@ -9,7 +9,7 @@ function Home(){
     const popularBooks = books.filter(book=>(book.rating>4.5));
     return(
         <div id="home">
-            <h1>Home Page</h1>
+            <h1>Welcome To Maytr's Online Library</h1>
             <h2>Choose Your Favorite Category</h2>
             <div id="homeCategory">
                 {categoryBooks.map(book=>{
