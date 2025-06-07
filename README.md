@@ -1,12 +1,54 @@
-# React + Vite
+ Online Library - BookList React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ## ✨ Features
 
-Currently, two official plugins are available:
+**Search Functionality** — Instantly search for books by title.
+**Category Filter** — Browse books filtered by categories using dynamic routing .
+**Book Details View** — Click on any book to view detailed information on a separate page.
+**Add New Book** — Form to add new books dynamically to the list.
+**Error Page** — Friendly error handling for unknown routes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### How to Run the Application
 
-## Expanding the ESLint configuration
+Follow these steps to get the Online Library React project up and running on your local machine.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+* **Node.js**: [Download and Install Node.js](https://nodejs.org/en/download/) (which includes npm)
+
+#### Installation
+
+1.  **Clone the repository:**
+
+    If you have Git installed, open your terminal or command prompt and run:
+    ```bash
+    git clone https://github.com/BeemariSrinivas/online-library.git
+    ```
+    
+    Alternatively, you can download the ZIP file directly from the GitHub page.
+
+3.  **Navigate to the project directory:**
+    ```bash
+    cd online-library
+    ```
+
+4.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    This command will install all the necessary packages listed in `package.json`.
+
+#### Running the Application
+
+Once the dependencies are installed, you can start the development server:
+
+```bash
+npm run dev
+This command will:
+
+Start the development server.
+Open your default web browser to http://localhost:5173. If it doesn't open automatically, you can navigate to this URL manually.
+The application will automatically reload if you make changes to the source code. You will also see any lint errors in the console.
+
