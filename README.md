@@ -25,7 +25,7 @@ Before you begin, ensure you have the following installed:
     If you have Git installed, open your terminal or command prompt and run:
     ```bash
     git clone https://github.com/BeemariSrinivas/online-library.git
-    cd online-library```
+    ```
     
     Alternatively, you can download the ZIP file directly from the GitHub page.
 
